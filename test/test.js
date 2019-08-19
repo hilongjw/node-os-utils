@@ -32,6 +32,16 @@ describe('cpu', function () {
   })
 })
 
+describe('mem', function () {
+  it('returns mem info', function (done) {
+    var mem = osu.mem
+    mem.info().then(info => {
+      assert.ok(Object.keys(info).length > 0)
+      done()
+    })
+  })
+})
+
 describe('drive', function () {
   it('returns drive info', function (done) {
     var drive = osu.drive

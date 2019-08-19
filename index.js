@@ -4,9 +4,12 @@
  * description  :
  */
 
-require('./lib/cpu')
+const bucket = require('./lib/bucket')
+
+const cpu = require('./lib/cpu')
+const mem = require('./lib/mem')
+
 require('./lib/drive')
-require('./lib/mem')
 require('./lib/netstat')
 require('./lib/openfiles')
 require('./lib/osCmd')
@@ -14,4 +17,7 @@ require('./lib/os')
 require('./lib/proc')
 require('./lib/users')
 
-module.exports = require('./lib/bucket')
+bucket.cpu = cpu
+bucket.mem = mem
+
+module.exports = bucket

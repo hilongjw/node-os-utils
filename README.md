@@ -11,30 +11,30 @@ monitor vital signs of your server :
 - Total opened files
 - Network speed (input and output)
 
-# node-os-utils
+# async-os-utils
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Build Status](https://api.travis-ci.org/SunilWang/node-os-utils.svg?branch=master)](https://travis-ci.org/SunilWang/node-os-utils)
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 
 An operating system utility library. Some methods are wrappers of node libraries and others are calculations made by the module.
 
 [os-utils](https://github.com/oscmejia/os-utils) extended
+[node-os-utils](https://github.com/oscmejia/os-utils) extended
 
 ## Installation
 
 One line installation with [npm](http://npmjs.org).
 
 ```bash
-$ npm install node-os-utils --save
+$ npm install async-os-utils --save
 ```
 Then in your code
 
 ## Example
 
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var cpu = osu.cpu
 
 var count = cpu.count() // 8
@@ -54,7 +54,7 @@ osCmd.whoami()
 
 ## Configuration
 
-require('node-os-utils').options
+require('async-os-utils').options
 
 Default settings:
 
@@ -70,14 +70,14 @@ If you have `not supported` in some categories, your OS configuration is not sup
 ## Usage
 The following methods are available:
 
-### require('node-os-utils').cpu
+### require('async-os-utils').cpu
 
 #### cpu.average():object
 
 CPU average
 
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var cpu = osu.cpu
 
 var info = cpu.average()
@@ -98,7 +98,7 @@ CPU average usage
 - [interval]: number - interval millisecond. defaulta: 1000
 
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var cpu = osu.cpu
 
 cpu.usage()
@@ -117,7 +117,7 @@ cpu free percentage
 - [interval]: number - interval millisecond. defaulta: 1000
 
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var cpu = osu.cpu
 
 cpu.free()
@@ -137,14 +137,14 @@ cpu.free()
 
 ---
 
-### require('node-os-utils').drive
+### require('async-os-utils').drive
 
 #### drive.info():Promise(Object)
 
 drive info
 
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var drive = osu.drive
 
 drive.info()
@@ -172,14 +172,14 @@ drive.info()
 
 ---
 
-### require('node-os-utils').mem
+### require('async-os-utils').mem
 
 #### mem.info():Promise(Object)
 
 memory info
 
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var mem = osu.mem
 
 mem.info()
@@ -209,11 +209,11 @@ mem.info()
 
 ---
 
-### require('node-os-utils').netstat
+### require('async-os-utils').netstat
 
 #### netstat.stats():Promise(Array[Object])
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var netstat = osu.netstat
 
 netstat.stats()
@@ -236,7 +236,7 @@ netstat.stats()
 - [interval]: number - interval millisecond. defaulta: 1000
 
 ```js
-var osu = require('node-os-utils')
+var osu = require('async-os-utils')
 var netstat = osu.netstat
 
 netstat.inOut()
@@ -252,7 +252,7 @@ netstat.inOut()
 
 ---
 
-### require('node-os-utils').openfiles
+### require('async-os-utils').openfiles
 
 #### openfiles.openFd():Promise(number)
 Total opened files
@@ -263,7 +263,7 @@ Total opened files
 
 ---
 
-### require('node-os-utils').os
+### require('async-os-utils').os
 
 #### os.oos():Promise(string)
 
@@ -285,21 +285,21 @@ Red Hat 7.3
 
 ---
 
-### require('node-os-utils').proc
+### require('async-os-utils').proc
 
 #### proc.totalProcesses():Promise(number)
 #### proc.zombieProcesses():Promise(number)
 
 ---
 
-### require('node-os-utils').users
+### require('async-os-utils').users
 
 #### users.openedCount():Promise(number)
 TTY/SSH opened
 
 ---
 
-### require('node-os-utils').osCmd
+### require('async-os-utils').osCmd
 
 #### osCmd.topCpu():Promise(string)
 #### osCmd.topMem():Promise(string)
@@ -327,7 +327,7 @@ bucket.osCmd = {
 
 [MIT](LICENSE). Copyright (c).
 
-[npm-image]: https://img.shields.io/npm/v/node-os-utils.svg
-[npm-url]: https://www.npmjs.com/package/node-os-utils
-[downloads-image]: https://img.shields.io/npm/dt/node-os-utils.svg
-[downloads-url]: https://npmjs.org/package/node-os-utils
+[npm-image]: https://img.shields.io/npm/v/async-os-utils.svg
+[npm-url]: https://www.npmjs.com/package/async-os-utils
+[downloads-image]: https://img.shields.io/npm/dt/async-os-utils.svg
+[downloads-url]: https://npmjs.org/package/async-os-utils
