@@ -6,18 +6,14 @@
 
 const bucket = require('./lib/bucket')
 
-const cpu = require('./lib/cpu')
-const mem = require('./lib/mem')
-
-require('./lib/drive')
-require('./lib/netstat')
-require('./lib/openfiles')
-require('./lib/osCmd')
-require('./lib/os')
-require('./lib/proc')
-require('./lib/users')
-
-bucket.cpu = cpu
-bucket.mem = mem
+bucket._setModule('cpu')
+bucket._setModule('mem')
+bucket._setModule('osCmd')
+bucket._setModule('os')
+bucket._setModule('proc')
+bucket._setModule('drive')
+bucket._setModule('netstat')
+bucket._setModule('openfiles')
+bucket._setModule('users')
 
 module.exports = bucket

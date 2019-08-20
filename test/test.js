@@ -52,3 +52,24 @@ describe('drive', function () {
     })
   })
 })
+
+describe('netstat', function () {
+  it('returns stats', function (done) {
+    const netstat = osu.netstat
+    netstat.stats().then(info => {
+      assert.ok(Object.keys(info).length > 0)
+      done()
+    })
+  })
+})
+
+describe('os', function () {
+  it('returns ip', function () {
+    const ip = osu.os.ip()
+    assert.ok(ip)
+  })
+  it('returns hostname', function () {
+    const result = osu.os.hostname()
+    assert.ok(result)
+  })
+})
